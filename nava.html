@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        video {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -1;
+            transform: translateX(-50%) translateY(-50%);
+            opacity: 0.8; /* Set the opacity for the video background */
+        }
+
+        header {
+            background: linear-gradient(to right, #3b5998, #2a3f7a);
+            color: #fff;
+            padding: 20px;
+            margin-bottom: 40px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(63, 60, 60, 0.1);
+        }
+
+        nav {
+            background: linear-gradient(to right, #3b5998, #2a3f7a);
+            padding: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+            opacity: 0.9; /* Set the opacity for the menu */
+        }
+
+        nav a {
+            color: #eaf1f8;
+            text-decoration: none;
+            padding: 10px;
+            transition: color 0.3s ease-in-out;
+            border-radius: 8px;
+            background-color: #45619d;
+        }
+
+        nav a:hover {
+            color: #301776;
+            background-color: #5f7ec7;
+        }
+
+        main {
+            display: inline-flex;
+            margin: 20px;
+            flex: 1;
+        }
+
+        section, aside {
+            background-color: rgba(227, 231, 232, 0.95);
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: background 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            border-radius: 8px;
+            margin: 10px;
+            flex: 1;
+        }
+
+        section:hover, aside:hover {
+            background-color: #d8cece;
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        section h2, aside h2 {
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        aside ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        aside ul li {
+            margin-bottom: 10px;
+        }
+
+        aside ul li a {
+            color: #3b5998;
+            text-decoration: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        aside ul li a:hover {
+            color: #ffd700;
+        }
+
+        footer {
+            background: linear-gradient(to right, #3b5998, #2a3f7a);
+            color: #f1bdbd;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        footer:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.2);
+        }
+    </style>
+    <title>CRASH COURSE</title>
+</head>
+<body>
+
+    <!-- Video Background -->
+    <video autoplay muted loop>
+        <source src="C:\Users\user\TEAMsaAlrha\.vscode\okk.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <header>
+        <h1>CRASH COURSE EDUCATION</h1>
+    </header>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="profile.html">Profile</a>
+        <a href="chat.html">Chat</a>
+        <a href="usefulsites.html">Useful Sites</a>
+        <a href="aboutus.html">About Us</a>
+    </nav>
+
+    <main>
+        <section>
+            <h2>News Feed</h2>
+            <p>This is where your posts will appear.</p>
+        </section>
+
+        <aside>
+            <h2>IMPORTANT FORMULA FOR:</h2>
+            <ul>
+                <li><a href="#">CLASS 8</a></li>
+                <li><a href="#">CLASS 9</a></li>
+                <li><a href="#">CLASS 10</a></li>
+                <li><a href="#">CLASS 11</a></li>
+                <li><a href="#">CLASS 12</a></li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 crash course. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
