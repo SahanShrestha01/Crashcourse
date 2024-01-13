@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden; /* Hide scrollbars */
+            background-color: #f4f4f4;
+        }
+
+        main {
+            background-color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 20px;
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <h2>Student Profile</h2>
+        <p>Name: <span id="name"></span></p>
+        <p>Age: <span id="age"></span></p>
+        <p>Gender: <span id="gender"></span></p>
+
+        <!-- Display the uploaded photo -->
+        <img id="profile-photo" src="" alt="Student Photo">
+
+        <script>
+            // Retrieve parameters from the URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const name = urlParams.get('name');
+            const age = urlParams.get('age');
+            const gender = urlParams.get('gender');
+
+            // Display the data on the page
+            document.getElementById('name').textContent = name;
+            document.getElementById('age').textContent = age;
+            document.getElementById('gender').textContent = gender;
+
+            // Retrieve and display the uploaded photo
+            const photoInput = document.getElementById('photo');
+            const profilePhoto = document.getElementById('profile-photo');
+
+            if (photoInput.files.length > 0) {
+                const photoUrl = URL.createObjectURL(photoInput.files[0]);
+                profilePhoto.src = photoUrl;
+            }
+        </script>
+    </main>
+</body>
+
+</html>
