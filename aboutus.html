@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Educational Hub</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background: #000; /* Premium Black */
+        }
+
+        header {
+            background: #8a92e7; /* Dark Premium Blue */
+            color: #060606;
+            padding: 20px 10px;
+            border-radius: 0 0 15px 15px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-section,
+        .vision-mission-section,
+        .contact-section {
+            margin: 20px;
+            padding: 30px 15px;
+            border-radius: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .vision-mission-box,
+        .contact-box {
+            margin-top: 20px;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-button,
+        .contact-box button {
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-size: 18px;
+            transition: background 0.3s ease-in-out;
+            font-weight: 600;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-top: 20px; /* Added margin for better spacing on small screens */
+        }
+
+        h4 {
+            margin-bottom: 10px;
+            font-size: 30px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #0a0909;
+        }
+
+        p {
+            margin-bottom: 20px;
+            font-size: 16px;
+            color: #f9f3f3; /* Updated text color for better readability */
+        }
+
+        .vision-mission-box h2,
+        .contact-box h2 {
+            margin-bottom: 10px;
+            font-size: 24px;
+            font-weight: 600;
+            color: #4caf50;
+        }
+
+        .vision-mission-box p,
+        .contact-box input,
+        .contact-box button {
+            font-size: 16px;
+            color: #f9f3f3;
+        }
+
+        .contact-box input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .contact-box button {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            transition: background 0.3s ease-in-out;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            margin-top: 10px;
+            display: inline-block; /* Adjusted for better responsiveness */
+        }
+
+        .footer {
+            background: #1a237e; /* Dark Premium Blue */
+            color: #fff;
+            padding: 15px;
+            border-radius: 20px 20px 0 0;
+            text-align: center;
+            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            h4 {
+                font-size: 24px;
+            }
+
+            .cta-button {
+                font-size: 14px;
+                margin-top: 10px; /* Adjusted for better spacing on small screens */
+            }
+
+            .vision-mission-box h2,
+            .contact-box h2 {
+                font-size: 20px;
+            }
+
+            .vision-mission-box p,
+            .contact-box input,
+            .contact-box button {
+                font-size: 14px;
+            }
+
+            .about-section,
+            .vision-mission-section,
+            .contact-section {
+                margin: 10px;
+                padding: 20px;
+            }
+
+            .vision-mission-box,
+            .contact-box {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h4>CRASH COURSE</h4>
+        <p>Unlock the Power of Knowledge</p>
+        <a href="#about" class="cta-button">About Us</a>
+    </header>
+
+    <section id="about" class="about-section">
+        <h2 style="color: #ff9800;">ABOUT US:</h2>
+        <p style="color: #b7b2b1;"><strong>Welcome to Your Crash Course, where we are passionate about providing quality education to learners in our community through friend circle and experts.</strong></p>
+    </section>
+
+    <section id="vision-mission" class="vision-mission-section">
+        <div class="vision-mission-box">
+            <h2 style="color: #4caf50;">VISION:</h2>
+            <p>Empowering individuals through accessible and high-quality education to foster a knowledgeable and skilled global community.</p>
+        </div>
+
+        <div class="vision-mission-box">
+            <h2 style="color: #4caf50;">MISSION:</h2>
+            <p>Our mission is to break down barriers to education by offering diverse courses, fostering a collaborative learning environment, and continuously adapting to the evolving needs of our learners.</p>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-box">
+            <h2 style="color: #2196f3;">Contact Us:</h2>
+            <input type="text" placeholder="Your Email">
+            <input type="text" placeholder="Your Mobile Number">
+            <button style="background: linear-gradient(45deg, #2196f3, #1565c0); color: #fff;">Submit</button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2024 Crash Course. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
