@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatGPT Clone</title>
+    <!-- Add your stylesheets and other head elements here -->
+</head>
+<body>
+    <div class="chat-container"></div>
+    <input type="text" id="chat-input">
+    <button id="send-btn">Send</button>
+    <button id="delete-btn">Delete Chats</button>
+    <button id="theme-btn">Toggle Theme</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const chatInput = document.querySelector("#chat-input");
+            const sendButton = document.querySelector("#send-btn");
+            const chatContainer = document.querySelector(".chat-container");
+            const themeButton = document.querySelector("#theme-btn");
+            const deleteButton = document.querySelector("#delete-btn");
+
+            let userText = null;
+            const API_KEY = "PASTE-YOUR-API-KEY-HERE"; // Paste your API key here
+            const API_URL = "https://api.openai.com/v1/completions";
+
+            const loadDataFromLocalstorage = () => {
+                // ... (your existing code)
+            };
+
+            const createChatElement = (content, className) => {
+                // ... (your existing code)
+            };
+
+            const getChatResponse = async (incomingChatDiv) => {
+                // ... (your existing code)
+            };
+
+            const copyResponse = (copyBtn) => {
+                // ... (your existing code)
+            };
+
+            const showTypingAnimation = async () => {
+                // ... (your existing code)
+            };
+
+            const handleOutgoingChat = async () => {
+                userText = chatInput.value.trim();
+                if (!userText) return;
+
+                // ... (your existing code)
+
+                const outgoingChatDiv = createChatElement(html, "outgoing");
+                chatContainer.querySelector(".default-text")?.remove();
+                chatContainer.appendChild(outgoingChatDiv);
+                chatContainer.scrollTo(0, chatContainer.scrollHeight);
+
+                try {
+                    await showTypingAnimation();
+                } catch (error) {
+                    console.error("Error showing typing animation:", error);
+                }
+            };
+
+            deleteButton.addEventListener("click", () => {
+                if (confirm("Are you sure you want to delete all the chats?")) {
+                    localStorage.removeItem("all-chats");
+                    loadDataFromLocalstorage();
+                }
+            });
+
+            themeButton.addEventListener("click", () => {
+                document.body.classList.toggle("light-mode");
+                localStorage.setItem("themeColor", themeButton.innerText);
+                themeButton.innerText = document.body.classList.contains("light-mode") ? "dark_mode" : "light_mode";
+            });
+
+            const initialInputHeight = chatInput.scrollHeight;
+
+            chatInput.addEventListener("input", () => {
+                chatInput.style.height = `${initialInputHeight}px`;
+                chatInput.style.height = `${chatInput.scrollHeight}px`;
+            });
+
+            chatInput.addEventListener("keydown", (e) => {
+                if (e.key === "Enter" && !e.shiftKey && window.innerWidth > 800) {
+                    e.preventDefault();
+                    handleOutgoingChat();
+                }
+            });
+
+            loadDataFromLocalstorage();
+            sendButton.addEventListener("click", handleOutgoingChat);
+        });
+    </script>
+</body>
+</html>

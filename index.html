@@ -40,7 +40,7 @@
             margin: auto; /* Center the form horizontally */
         }
 
-        h2 {
+        h3 {
             color: #333;
         }
 
@@ -57,6 +57,30 @@
 
         input,
         select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+            border: 1px solid #f4d3d3;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        .upload-box {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .upload-box label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        .upload-box input {
             width: 100%;
             padding: 10px;
             margin-top: 5px;
@@ -99,6 +123,7 @@
         <h3>WELCOME TO CRASHCOURSE EDUCATION</h3>
         <h4>Enter Your Details</h4>
         <form action="nava.html" method="get">
+            <form action="profile.html" method="get">
             <input type="text" id="name" placeholder="Student's Name" required>
             <input type="number" id="age" placeholder="Enter your age" required>
             <select id="gender" required>
