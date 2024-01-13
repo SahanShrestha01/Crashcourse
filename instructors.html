@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Instructor Profile</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    section {
+      padding: 20px;
+      text-align: center;
+    }
+    footer {
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    .oval-container {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+    .oval {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+    .oval img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+    }
+    .oval:hover {
+      transform: scale(1.1);
+    }
+    .join-button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+      margin-bottom: 20px;
+    }
+    .form-container {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      z-index: 1;
+    }
+    .form-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 300px;
+    }
+    .form-content label {
+      display: block;
+      margin-bottom: 8px;
+    }
+    .form-content input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+    }
+    .form-content button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .instructor-info {
+      margin-top: 20px;
+    }
+
+    @media (max-width: 600px) {
+      .oval {
+        width: 100%;
+        margin: 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Instructor Profile</h1>
+  </header>
+
+  <button class="join-button" onclick="openForm()">Join as Instructor</button>
+
+  <section>
+    <h2>Instructor Information</h2>
+
+    <!-- Placeholder for displaying instructor profiles -->
+    <div class="oval-container" id="instructorProfiles"></div>
+  </section>
+  <div class="form-container" id="joinForm">
+    <div class="form-content">
+      <h2>Join as Instructor</h2>
+      <form id="instructorForm" onsubmit="submitForm(event)">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="qualifications">Qualifications:</label>
+        <textarea id="qualifications" name="qualifications" rows="4" required></textarea>
+
+        <label for="subject">Subject:</label>
+        <input type="text" id="subject" name="subject" required>
+
+        <label for="class">Class:</label>
+        <input type="text" id="class" name="class" required>
+
+        <label for="contact">Contact Information:</label>
+        <input type="text" id="contact" name="contact" required>
+
+        <label for="photo">Upload Photo:</label>
+        <input type="file" id="photo" name="photo" accept="image/*" required>
+
+        <button type="submit">Submit</button>
+        <button type="button" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    let instructorCount = 0;
+
+    function openForm() {
+      document.getElementById("joinForm").style.display = "flex";
+    }
+
+    function closeForm() {
+      document.getElementById("joinForm").style.display = "none";
+    }
+
+    function submitForm(event) {
+      event.preventDefault();
+
+      // Fetch values from the form
+      const name = document.getElementById("name").value;
+      const qualifications = document.getElementById("qualifications").value;
+      const subject = document.getElementById("subject").value;
+      const className = document.getElementById("class").value;
+      const contact = document.getElementById("contact").value;
+      const photo = document.getElementById("photo").files[0];
+
+      // Generate a unique ID for each instructor
+      instructorCount++;
+
+      // Create a unique ID for the instructor
+      const instructorId = `instructor_${instructorCount}`;
+
+      // Display instructor information
+      const instructorInfoContainer = document.getElementById("instructorProfiles");
+
+      const profileContainer = document.createElement("div");
+      profileContainer.classList.add("oval");
+      profileContainer.id = instructorId;
+
+      const img = document.createElement("img");
+      img.src = URL.createObjectURL(photo);
+      img.alt = `${name}'s Photo`;
+
+      const infoDiv = document.createElement("div");
+      infoDiv.classList.add("instructor-info");
+      infoDiv.innerHTML = `
+        <h3>${name}</h3>
+        <p>Qualifications: ${qualifications}</p>
+        <p>Subject: ${subject}</p>
+        <p>Class: ${className}</p>
+        <p>Contact Information: ${contact}</p>
+      `;
+
+      profileContainer.appendChild(img);
+      profileContainer.appendChild(infoDiv);
+
+      instructorInfoContainer.appendChild(profileContainer);
+
+      // Close the form
+      closeForm();
+    }
+  </script>
+
+</body>
+</html>

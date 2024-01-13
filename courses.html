@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Profile</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #3a3a3a;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+    section {
+      margin: 20px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+    }
+    .circle {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin: 20px;
+      float: right;
+    }
+    .circle img {
+      width: 100%;
+      height: auto;
+      border-radius: 50%;
+      display: block;
+    }
+    label {
+      display: block;
+      margin: 10px 0;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    #profileOutput {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Student Profile</h1>
+  </header>
+
+  <section>
+    <h2>Add Your Information</h2>
+    <form id="profileForm">
+      <label for="photo">Upload Photo:</label>
+      <input type="file" id="photo" name="photo" accept="image/*">
+
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="contact">Contact Information:</label>
+      <input type="text" id="contact" name="contact" required>
+
+      <label for="education">Educational Field:</label>
+      <input type="text" id="education" name="education" required>
+
+      <!-- Add other fields as needed -->
+
+      <button type="button" onclick="submitForm()">Submit</button>
+    </form>
+  </section>
+
+  <section id="profileOutput" class="section-profile">
+    <div class="circle" id="profilePhoto"></div>
+    <div id="profileDetails"></div>
+  </section>
+
+  <script>
+    function submitForm() {
+      var form = document.getElementById("profileForm");
+      var name = form.elements["name"].value;
+      var contact = form.elements["contact"].value;
+      var education = form.elements["education"].value;
+
+      // Additional fields can be retrieved similarly
+
+      var photoInput = form.elements["photo"];
+      var photoUrl = "";
+      if (photoInput.files.length > 0) {
+        var photo = photoInput.files[0];
+        photoUrl = URL.createObjectURL(photo);
+      }
+
+      displayProfile(name, contact, education, photoUrl);
+    }
+
+    function displayProfile(name, contact, education, photoUrl) {
+      var profileOutput = document.getElementById("profileOutput");
+      var profileDetails = document.getElementById("profileDetails");
+      var profilePhoto = document.getElementById("profilePhoto");
+
+      profileDetails.innerHTML = "<h2>My Profile</h2>" +
+        "<p><strong>Name:</strong> " + name + "</p>" +
+        "<p><strong>Contact Information:</strong> " + contact + "</p>" +
+        "<p><strong>Educational Field:</strong> " + education + "</p>";
+
+      profilePhoto.innerHTML = '<img src="' + photoUrl + '" alt="Profile Photo">';
+      profileOutput.style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
