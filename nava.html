@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,26 +24,25 @@
             height: auto;
             z-index: -1;
             transform: translateX(-50%) translateY(-50%);
-            opacity: 0.8; /* Set the opacity for the video background */
+            opacity: 0.8;
         }
 
         header {
-            background: linear-gradient(to right, #3b5998, #2a3f7a);
+            background: linear-gradient(to right, #050505, #080808);
             color: #fff;
             padding: 20px;
-            margin-bottom: 40px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(63, 60, 60, 0.1);
         }
 
         nav {
-            background: linear-gradient(to right, #3b5998, #2a3f7a);
+            background: linear-gradient(to right, #6272ea, #6a5acd);
             padding: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
             justify-content: space-around;
             margin-bottom: 20px;
-            opacity: 0.9; /* Set the opacity for the menu */
+            opacity: 0.9;
         }
 
         nav a {
@@ -51,63 +51,48 @@
             padding: 10px;
             transition: color 0.3s ease-in-out;
             border-radius: 8px;
-            background-color: #45619d;
+            background-color: #483d8b;
         }
 
         nav a:hover {
-            color: #301776;
-            background-color: #5f7ec7;
+            color: #ffd700;
+            background-color: #6a5acd;
         }
 
         main {
-            display: inline-flex;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin: 20px;
             flex: 1;
         }
 
-        section, aside {
+        section,
+        aside {
             background-color: rgba(227, 231, 232, 0.95);
             padding: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: background 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
             border-radius: 8px;
             margin: 10px;
-            flex: 1;
+            width: 100%;
         }
 
-        section:hover, aside:hover {
+        section:hover,
+        aside:hover {
             background-color: #d8cece;
             transform: scale(1.02);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        section h2, aside h2 {
+        section h2,
+        aside h2 {
             color: #333;
             margin-bottom: 15px;
         }
 
-        aside ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        aside ul li {
-            margin-bottom: 10px;
-        }
-
-        aside ul li a {
-            color: #3b5998;
-            text-decoration: none;
-            transition: color 0.3s ease-in-out;
-        }
-
-        aside ul li a:hover {
-            color: #ffd700;
-        }
-
         footer {
-            background: linear-gradient(to right, #3b5998, #2a3f7a);
+            background: linear-gradient(to right, #4b0082, #6a5acd);
             color: #f1bdbd;
             padding: 20px;
             position: fixed;
@@ -121,9 +106,31 @@
             transform: translateY(-10px);
             box-shadow: 0 -8px 16px rgba(0, 0, 0, 0.2);
         }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav a {
+                margin-bottom: 10px;
+            }
+
+            main {
+                align-items: stretch;
+            }
+
+            section,
+            aside {
+                width: auto;
+            }
+        }
     </style>
     <title>CRASH COURSE</title>
 </head>
+
 <body>
 
     <!-- Video Background -->
@@ -147,19 +154,9 @@
     <main>
         <section>
             <h2>News Feed</h2>
-            <p>This is where your posts will appear.</p>
+            <p>EASY ACCESS TO EDUCATIONS</p>
+            <p>Welcome to our education platform where we strive to provide easy access to high-quality education for learners around the world. Our commitment is to make learning enjoyable, accessible, and enriching for everyone.</p>
         </section>
-
-        <aside>
-            <h2>IMPORTANT FORMULA FOR:</h2>
-            <ul>
-                <li><a href="#">CLASS 8</a></li>
-                <li><a href="#">CLASS 9</a></li>
-                <li><a href="#">CLASS 10</a></li>
-                <li><a href="#">CLASS 11</a></li>
-                <li><a href="#">CLASS 12</a></li>
-            </ul>
-        </aside>
     </main>
 
     <footer>
@@ -167,4 +164,5 @@
     </footer>
 
 </body>
+
 </html>
